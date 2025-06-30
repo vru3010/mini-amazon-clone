@@ -7,7 +7,6 @@ A responsive mini Amazon clone built using **HTML**, **CSS**, and **JavaScript**
 ## 🚀 Features
 
 - 🛒 Add to Cart functionality with live item counter
-- 🌗 Light/Dark Mode toggle
 - 📦 Responsive Product Cards (3-column PC, 2-column Tablet, 1-column Mobile)
 - 🎨 Clean design with CSS variables, shadows, and animations
 - 🎯 Smooth scroll, styled scrollbar, and hover effects
