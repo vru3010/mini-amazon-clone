@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Amazon Clone</title>
+  <link rel="stylesheet" href="test_css.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">🛍️ MiniAmazon</div>
+
+    <input type="text" id="search" placeholder="Search products..." aria-label="Search products">
+
+    <div class="cart" role="button" aria-label="Shopping cart">
+      <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+      Cart
+      <span id="cart-count">0</span>
+    </div>
+  </header>
+
+  <!-- Product Section -->
+  <main class="product-container">
+
+   <!-- Card 1 -->
+<div class="product-card">
+  <img src="c:\Users\Vrush\OneDrive\Desktop\F&B\image\pro_image\shoe.jpeg" alt="Florsheim T-Toe Sneakers">
+  <h3>Florsheim Pace T-Toe Lace Up Sneaker</h3>
+  <p>₹9,487</p>
+  <button onclick="addToCart(this)" data-name="Florsheim Pace T-Toe Lace Up Sneaker" data-price="9487">Add to Cart</button>
+</div>
+
+<!-- Card 2 -->
+<div class="product-card">
+  <img src="c:\Users\Vrush\OneDrive\Desktop\F&B\image\pro_image\headphone.jpeg" alt="Soundcore Wireless Headphones">
+  <h3>Soundcore Wireless Headphones (by Anker)</h3>
+  <p>₹7,998</p>
+<button onclick="addToCart(this)" data-name="Soundcore Wireless Headphones (by Anker)" data-price="7998">Add to Cart</button>
+</div>
+
+<!-- Card 3 -->
+<div class="product-card">
+  <img src="c:\Users\Vrush\OneDrive\Desktop\F&B\image\pro_image\samsung_watch.jpeg" alt="Samsung Galaxy Watch Ultra">
+  <h3>Samsung Galaxy Watch Ultra</h3>
+  <p>₹59,999</p>
+  <button onclick="addToCart(this)" data-name="Samsung Galaxy Watch Ultra" data-price="59999">Add to Cart</button>
+</div>
+
+<!-- Card 4 -->
+<div class="product-card">
+  <img src="c:\Users\Vrush\OneDrive\Desktop\F&B\image\pro_image\laptopbag.jpeg" alt="FINGERS Laptop Bag">
+  <h3>FINGERS LuxuryLink-B1 Laptop Bag</h3>
+  <p>₹1,800</p>
+ <button onclick="addToCart(this)" data-name="FINGERS LuxuryLink-B1 Laptop Bag" data-price="1800">Add to Cart</button>
+</div>
+
+<!-- Card 5 -->
+<div class="product-card">
+  <img src="c:\Users\Vrush\OneDrive\Desktop\F&B\image\pro_image\powerbank.jpeg" alt="boAt 10000mAh Power Bank">
+  <h3>boAt Energy&shy;shroom PB300 10000mAh Power Bank</h3>
+  <p>₹999</p>
+  <button onclick="addToCart(this)" data-name="boAt Energyshroom PB300 10000mAh Power Bank" data-price="999">Add to Cart</button>
+</div>
+
+<!-- Card 6 -->
+<div class="product-card">
+  <img src="c:\Users\Vrush\OneDrive\Desktop\F&B\image\pro_image\sunglasses.jpeg" alt="Black Hexagon Sunglasses">
+  <h3>Black Hexagon Sunglasses</h3>
+  <p>₹1,199</p>
+  <button onclick="addToCart(this)" data-name="Black Hexagon Sunglasses" data-price="1199">Add to Cart</button>
+</div>
+
+<!-- Card 7 -->
+<div class="product-card">
+  <img src="c:\Users\Vrush\OneDrive\Desktop\F&B\image\pro_image\laptop.jpeg" alt="MacBook Air 15 Laptop">
+  <h3>MacBook Air 15</h3>
+  <p>₹1,10,900</p>
+  <button onclick="addToCart(this)" data-name="MacBook Air 15" data-price="110900">Add to Cart</button>
+</div>
+
+  </main>
+
+  <!-- Customer Reviews Section -->
+  <section class="review-section">
+    <h2>What Our Customers Say</h2>
+    <div class="review-container">
+  <div class="review-card">
+    <p>This product is amazing and exceeded my expectations! The delivery was quick and the packaging was excellent.</p>
+    <hr>
+    <strong class="reviewer">Priya Sharma</strong>
+  </div>
+  <div class="review-card">
+    <p>Excellent quality, will buy again. The customer support was very helpful and resolved my query within minutes. Five stars!</p>
+    <hr>
+    <strong class="reviewer">Amit Patel</strong>
+  </div>
+  <div class="review-card">
+    <p>Very satisfied with the purchase. The product matches the description perfectly and works flawlessly. Thank you for the great service!</p>
+    <hr>
+    <strong class="reviewer">Sneha Rao</strong>
+  </div>
+</div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MiniAmazon. All rights reserved. Contact us</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+<script>
+  // Cart functionality
+  let cartCount = 0;
+
+  function addToCart(button) {
+    const productName = button.getAttribute('data-name');
+    const productPrice = button.getAttribute('data-price');
+
+    cartCount++;
+    document.getElementById('cart-count').textContent = cartCount;
+
+    alert(`${productName} has been added to your cart! Price: ₹${productPrice}`);
+  } 
+ 
+  </script>
+
+</body>
+</html>
