@@ -9,78 +9,121 @@
 <body>
 
   <!-- Header / Navbar -->
-  <header>
+  <header class="main-header">
+  <div class="header-left">
     <div class="logo">🛍️ MiniAmazon</div>
-
     <input type="text" id="search" placeholder="Search products..." aria-label="Search products">
+  </div>
 
-    <div class="cart" role="button" aria-label="Shopping cart">
-      <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-      Cart
-      <span id="cart-count">0</span>
-    </div>
-  </header>
+  <!-- Floating Cart Icon -->
+ <div class="floating-cart" onclick="showCartDetails()">
+  <i class="fas fa-shopping-cart"></i>
+  <span id="cart-count">0</span>
+</div>
+
+  <!-- User Profile Icon & Dropdown -->
+  <div class="user-menu">
+  <i class="fas fa-user"></i>
+  <span class="username">Guest</span>
+  <div class="dropdown-content">
+    <a href="profile.html">Profile</a>
+    <a href="#" onclick="placeOrder()">Place Order</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+</div>
+  </div>
+</header>
 
   <!-- Product Section -->
   <main class="product-container">
 
    <!-- Card 1 -->
 <div class="product-card">
-  <img src="pro_image/Shoe.jpeg" alt="Florsheim T-Toe Sneakers">
+  <img src="pro_image/shoe.jpeg" alt="Florsheim T-Toe Sneakers">
   <h3>Florsheim Pace T-Toe Lace Up Sneaker</h3>
   <p>₹9,487</p>
-  <button onclick="addToCart(this)" data-name="Florsheim Pace T-Toe Lace Up Sneaker" data-price="9487">Add to Cart</button>
+  <p class="product-description">Lightweight and breathable shoes perfect for daily runs and workouts.</p>
+  <button onclick="addToCart(this)" data-name="Running Shoes" data-price="9,487" data-image="pro_image/shoe.jpeg">Add to Cart</button>
 </div>
-
+ 
 <!-- Card 2 -->
 <div class="product-card">
-  <img src="pro_image/Headphone.jpeg" alt="Soundcore Wireless Headphones">
+  <img src="pro_image/headphone.jpeg" alt="Soundcore Wireless Headphones">
   <h3>Soundcore Wireless Headphones (by Anker)</h3>
   <p>₹7,998</p>
-<button onclick="addToCart(this)" data-name="Soundcore Wireless Headphones (by Anker)" data-price="7998">Add to Cart</button>
+  <p class="product-description">High-quality sound with noise cancellation and long battery life.</p>
+<button onclick="addToCart(this)" data-name="Wireless Headphones" data-price="7998" data-image="pro_image/headphone.jpeg">Add to Cart</button>
 </div>
 
 <!-- Card 3 -->
 <div class="product-card">
-  <img src="pro_image/Samsung_watch.jpeg" alt="Samsung Galaxy Watch Ultra">
+  <img src="pro_image/samsung_watch.jpeg" alt="Samsung Galaxy Watch Ultra">
   <h3>Samsung Galaxy Watch Ultra</h3>
   <p>₹59,999</p>
-  <button onclick="addToCart(this)" data-name="Samsung Galaxy Watch Ultra" data-price="59999">Add to Cart</button>
+  <p class="product-description">Advanced smartwatch with health tracking, GPS, and long battery life.</p>
+  <button onclick="addToCart(this)" data-name="Smart Watch" data-price="59999" data-image="pro_image/samsung_watch.jpeg">Add to Cart</button>
 </div>
-
+ 
 <!-- Card 4 -->
 <div class="product-card">
-  <img src="pro_image/Laptopbag.jpeg" alt="FINGERS Laptop Bag">
+  <img src="pro_image/laptopbag.jpeg" alt="FINGERS Laptop Bag">
   <h3>FINGERS LuxuryLink-B1 Laptop Bag</h3>
   <p>₹1,800</p>
- <button onclick="addToCart(this)" data-name="FINGERS LuxuryLink-B1 Laptop Bag" data-price="1800">Add to Cart</button>
+  <p class="product-description">Durable and spacious laptop bag ideal for office or college use.</p>
+ <button onclick="addToCart(this)" data-name="Laptop Bag" data-price="1800" data-image="pro_image/laptopbag.jpeg">Add to Cart</button>
 </div>
 
 <!-- Card 5 -->
 <div class="product-card">
-  <img src="pro_image/Powerbank.jpeg" alt="boAt 10000mAh Power Bank">
+  <img src="pro_image/powerbank.jpeg" alt="boAt 10000mAh Power Bank">
   <h3>boAt Energy&shy;shroom PB300 10000mAh Power Bank</h3>
   <p>₹999</p>
-  <button onclick="addToCart(this)" data-name="boAt Energyshroom PB300 10000mAh Power Bank" data-price="999">Add to Cart</button>
+  <p class="product-description">Compact and powerful power bank with fast charging capabilities.</p>
+  <button onclick="addToCart(this)" data-name="Power Bank 10000mAh" data-price="999" data-image="pro_image/powerbank.jpeg">Add to Cart</button>
 </div>
-
+ 
 <!-- Card 6 -->
 <div class="product-card">
-  <img src="pro_image/Sunglasses.jpeg" alt="Black Hexagon Sunglasses">
+  <img src="pro_image/sunglasses.jpeg" alt="Black Hexagon Sunglasses">
   <h3>Black Hexagon Sunglasses</h3>
   <p>₹1,199</p>
-  <button onclick="addToCart(this)" data-name="Black Hexagon Sunglasses" data-price="1199">Add to Cart</button>
+  <p class="product-description">Stylish and trendy sunglasses with UV protection.</p>
+  <button onclick="addToCart(this)" data-name="Stylish Sunglasses" data-price="1199" data-image="pro_image/sunglasses.jpeg">Add to Cart</button>
 </div>
-
+ 
 <!-- Card 7 -->
 <div class="product-card">
-  <img src="pro_image/Laptop.jpeg" alt="MacBook Air 15 Laptop">
+  <img src="pro_image/laptop.jpeg" alt="MacBook Air 15 Laptop">
   <h3>MacBook Air 15</h3>
   <p>₹1,10,900</p>
-  <button onclick="addToCart(this)" data-name="MacBook Air 15" data-price="110900">Add to Cart</button>
+  <p class="product-description">Powerful and lightweight laptop with M2 chip, perfect for professionals and students.</p>
+  <button onclick="addToCart(this)" data-name="Macbook Air 15" data-price="110900" data-image="pro_image/laptop.jpeg">Add to Cart</button>
+  </div>
+
+<!-- Card 8 -->
+<div class="product-card">
+  <img src="pro_image/bag.jpeg" alt="FINGERS LuxuryLink-B1 Laptop Bag">
+  <h3>FINGERS LuxuryLink-B1 Laptop Bag</h3>
+  <p>1,699</p>
+  <p class="product-description">Stylish and durable school/college bag with multiple compartments.</p>
+  <button onclick="addToCart(this)" data-name="FINGERS LuxuryLink-B1 Laptop Bag" data-price="1699" data-image="pro_image/bag.jpeg">Add to Cart</button>
+</div>
+
+<!-- Card 9 -->
+<div class="product-card">
+  <img src="pro_image/samsung_phone.jpeg" alt="Samsung Galaxy S25 Ultra">
+  <h3>Samsung Galaxy S25 Ultra</h3>
+  <p>1,29,999</p>
+  <p class="product-description">Latest flagship smartphone with cutting-edge features and performance.</p>
+  <button onclick="addToCart(this)" data-name="Samsung Galaxy S25 Ultra" data-price="129999" data-image="pro_image/samsung_phone.jpeg">Add to Cart</button>
 </div>
 
   </main>
+
+    <!-- Place Order button -->
+  <div class="place-order-container">
+    <button onclick="placeOrder()" class="place-order-btn">Place Order</button>
+  </div>
 
   <!-- Customer Reviews Section -->
   <section class="review-section">
@@ -101,7 +144,22 @@
     <hr>
     <strong class="reviewer">Sneha Rao</strong>
   </div>
-</div>
+  <div class="review-card">
+    <p>Great experience! The product arrived on time and in perfect condition. Highly recommend this store for online shopping.</p>
+    <hr>
+    <strong class="reviewer">Rahul Verma</strong>
+  </div>
+  <div class="review-card">
+    <p>Fantastic service! The product quality is top-notch and the delivery was faster than expected. Will definitely shop again.</p>
+    <hr>
+    <strong class="reviewer">Anjali Mehta</strong>
+  </div>
+  <div class="review-card">
+    <p>Absolutely love this product! It works as described and the customer service was very responsive. Highly recommend!</p>
+    <hr>
+    <strong class="reviewer">Vikram Singh</strong>
+  </div>
+   </div>
   </section>
 
   <!-- Footer -->
@@ -116,20 +174,149 @@
   </footer>
 
 <script>
-  // Cart functionality
-  let cartCount = 0;
 
-  function addToCart(button) {
-    const productName = button.getAttribute('data-name');
-    const productPrice = button.getAttribute('data-price');
+// ----------------------------
+// user logout function
+// ----------------------------
+function logout() {
+  localStorage.removeItem("username");
+  // Optionally clear other user data
+  window.location.reload();
+}
 
-    cartCount++;
-    document.getElementById('cart-count').textContent = cartCount;
+// Show username in header if available
+document.addEventListener('DOMContentLoaded', function () {
+  const username = localStorage.getItem('username');
+  const usernameElement = document.querySelector('.username');
+  if (username && usernameElement) {
+    usernameElement.textContent = username;
+  } else if (usernameElement) {
+    usernameElement.textContent = "Guest";
+  }
+});
 
-    alert(`${productName} has been added to your cart! Price: ₹${productPrice}`);
-  } 
- 
-  </script>
+// ----------------------------
+// Add to Cart
+// ----------------------------
+function addToCart(button) {
+  const name = button.getAttribute("data-name");
+  const price = parseFloat(button.getAttribute("data-price").replace(/,/g, ""));
+  const image = button.getAttribute("data-image");
+
+  // Get current cart
+  let cart = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+
+  // Check if item already exists → update qty
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price, image, qty: 1 });
+  }
+
+  sessionStorage.setItem("cartItems", JSON.stringify(cart));
+  updateCartCount();
+}
+
+// ----------------------------
+// Update Cart Count
+// ----------------------------
+function updateCartCount() {
+  const cart = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById("cart-count").textContent = totalQty;
+}
+
+// ----------------------------
+// Show Cart Details (Popup)
+// ----------------------------
+function showCartDetails() {
+  const cart = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+  if (cart.length === 0) return alert("Cart is empty!");
+
+  // Remove old popup if exists
+  const oldPopup = document.getElementById("cart-popup");
+  if (oldPopup) oldPopup.remove();
+
+  const popup = document.createElement("div");
+  popup.id = "cart-popup";
+  popup.style.cssText = `
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: #fff; padding: 20px; border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 9999; max-width: 90vw;
+    text-align: center;
+  `;
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.qty;
+    total += itemTotal;
+
+    const itemDiv = document.createElement("div");
+    itemDiv.innerHTML = `
+      <img src="${item.image}" width="100"><br>
+      <strong>${item.name}</strong><br>
+      ₹${item.price} × ${item.qty} = ₹${itemTotal.toFixed(2)}
+      <br><button onclick="removeItem(${index})" style="margin: 8px;">❌ Remove</button>
+      <hr>`;
+    popup.appendChild(itemDiv);
+  });
+
+  const gst = total * 0.18;
+  const profit = total * 0.10;
+  const grandTotal = total + gst + profit;
+
+  popup.innerHTML += `
+    <h3>Total Bill</h3>
+    <p>Original: ₹${total.toFixed(2)}</p>
+    <p>GST (18%): ₹${gst.toFixed(2)}</p>
+    <p>Profit (10%): ₹${profit.toFixed(2)}</p>
+    <p><strong>Grand Total: ₹${grandTotal.toFixed(2)}</strong></p>
+    <br>
+    <button onclick="clearCart()" style="background: red; color: white; padding: 8px 12px;">🗑️ Remove All Orders</button>
+    <br><br>
+    <button onclick="closeCart()" style="padding: 6px 12px;">Close</button>
+  `;
+
+  document.body.appendChild(popup);
+}
+
+// ----------------------------
+// Remove One Item by Index
+// ----------------------------
+function removeItem(index) {
+  let cart = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+  cart.splice(index, 1);
+  sessionStorage.setItem("cartItems", JSON.stringify(cart));
+  updateCartCount();
+  showCartDetails();
+}
+
+// ----------------------------
+// Remove All Items
+// ----------------------------
+function clearCart() {
+  sessionStorage.removeItem("cartItems");
+  updateCartCount();
+  closeCart();
+}
+
+// ----------------------------
+// Close Cart Popup
+// ----------------------------
+function closeCart() {
+  const popup = document.getElementById("cart-popup");
+  if (popup) popup.remove();
+}
+
+// ----------------------------
+// On Page Load
+// ----------------------------
+window.onload = function () {
+  updateCartCount();
+};
+</script>
 
 </body>
 </html>
