@@ -33,7 +33,8 @@ project/
 
 > *(Optional - Add screenshots after deployment)*  
 > Example:
-> ![Website Screenshot](https://your-live-demo-link.com/screenshot.png)
+> [![Mini Amazon Clone Screenshot](https://your-image-url.com/screenshot.png)](https://vru3010.github.io/mini-amazon-clone/)
+
 
 ---
 
