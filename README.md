@@ -57,7 +57,7 @@ project/
 ## 🌍 Live Demo
 
 > Coming soon on GitHub Pages  
-> 🔗 `https://your-username.github.io/mini-amazon-clone/`
+> Live Demo: vru3010.github.io/mini-amazon-clone
 
 ---
 
