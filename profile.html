@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile - MiniAmazon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: white;
+  min-height: 100vh;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding-top: 80px; /* space for fixed header */
+  overflow-y: auto;   /* vertical scroll */
+  overflow-x: hidden; /* ✅ no horizontal scroll */
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #febd69 transparent; /* For Firefox */
+  /* Optional: Custom Scrollbar for Webkit browsers */
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+  body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #febd69;
+    border-radius: 6px;
+  }
+}
+
+header {
+  background: #232f3e;
+  color: #febd69;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid #febd69;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  height: 60px; /* Ensure enough height for logo */
+  box-sizing: border-box;
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #febd69;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+  height: 40px; /* Ensure logo fits */
+}
+
+header .logo i {
+  font-size: 28px;
+  margin-right: 6px;
+  vertical-align: middle;
+  color: #febd69;
+}
+  .user-info {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 16px;
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .user-info h2 {
+    margin: 0 0 20px;
+    color: #232f3e;
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 2px solid #febd69;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .user-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .user-info .form-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+  }
+
+  .user-info label {
+    min-width: 120px;
+    margin: 0;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .user-info input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .user-info button {
+    background: #febd69;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: #232f3e;
+    font-weight: bold;
+    width: 100%;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .user-info button:hover {
+    background: #f0a846;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .logout {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #232f3e;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .logout a {
+    color: #ff5858;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* Optional: Custom Scrollbar */
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+  body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #febd69;
+    border-radius: 6px;
+  }
+</style>
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">🛍️ MiniAmazon</div>
+    <div class="user-greet">Welcome, <span id="displayUsername">Guest</span></div>
+  </header>
+
+  <div class="user-info">
+    <h2>My Profile</h2>
+    <form id="profileForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" placeholder="Enter your delivery address" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" required>
+
+      <button type="submit">Save Profile</button>
+    </form>
+  </div>
+
+  <div class="logout">
+    <a href="login.html" onclick="logout()">Logout</a>
+  </div>
+
+  <script>
+    // Load profile data if exists
+    window.onload = function () {
+      const storedName = localStorage.getItem("username");
+      const storedEmail = localStorage.getItem("email");
+      const storedAddress = localStorage.getItem("address");
+      const storedPhone = localStorage.getItem("phone");
+      const storedDob = localStorage.getItem("dob");
+
+      if (storedName) {
+        document.getElementById("name").value = storedName;
+        document.getElementById("displayUsername").innerText = storedName;
+      }
+
+      if (storedEmail) {
+        document.getElementById("email").value = storedEmail;
+      }
+
+      if (storedAddress) {
+        document.getElementById("address").value = storedAddress;
+      }
+
+      if (storedPhone) {
+        document.getElementById("phone").value = storedPhone;
+      }
+
+      if (storedDob) {
+        document.getElementById("dob").value = storedDob;
+      }
+    };
+
+    // Save data to localStorage
+    document.getElementById("profileForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const address = document.getElementById("address").value;
+      const phone = document.getElementById("phone").value;
+      const dob = document.getElementById("dob").value;
+
+      localStorage.setItem("username", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("address", address);
+      localStorage.setItem("phone", phone);
+      localStorage.setItem("dob", dob);
+
+      document.getElementById("displayUsername").innerText = name;
+      alert("Profile saved successfully!");
+    });
+
+    // Clear data on logout
+    function logout() {
+      localStorage.removeItem("username");
+      localStorage.removeItem("email");
+      localStorage.removeItem("address");
+      localStorage.removeItem("phone");
+      localStorage.removeItem("dob");
+
+      alert("Logged out successfully!");
+    }
+  </script>
+
+</body>
+</html>
