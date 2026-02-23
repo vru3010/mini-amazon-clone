@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Today's Deals - MiniAmazon</title>
+    <style>
+        body {
+            font-family: 'Amazon Ember', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b2e3eb;
+        }
+        .main-header {
+            background-color: #131921;
+            color: white;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: auto;
+            letter-spacing: 1px;
+        }
+        .deal-search {
+            padding: 10px 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 350px;
+            font-size: 17px;
+            margin-left: 24px;
+            background: #f7fafa;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .deal-search:focus {
+            outline: none;
+            border-color: #ffa41c;
+            box-shadow: 0 0 0 2px #ffe3b3;
+        }
+        .back-btn {
+            background: #fff;
+            color: #131921;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 7px 18px;
+            margin-right: 18px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #f0c14b;
+            color: #111;
+            border-color: #a88734;
+        }
+        .breadcrumb {
+            padding: 10px 24px;
+            background-color: #f7fafa;
+            font-size: 15px;
+        }
+        .breadcrumb a {
+            color: #007185;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #555;
+        }
+        .deals-section {
+            padding: 40px 16px;
+            max-width: 1000px;
+            margin: 32px auto 0 auto;
+            background: #f7fafa;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+        h1 {
+            color: #232f3e;
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+        .filters {
+            margin-bottom: 28px;
+            background: #fff;
+            padding: 18px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            max-width: 300px;
+        }
+        .filters h3 {
+            margin-bottom: 12px;
+            color: #232f3e;
+            font-size: 1.1rem;
+        }
+        .filters label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .filters input[type="checkbox"] {
+            accent-color: #ffa41c;
+            margin-right: 8px;
+            transform: scale(1.2);
+            vertical-align: middle;
+        }
+        .deal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 28px;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .deal-card {
+            background-color: #fff;
+            border: 1px solid #d5dbdb;
+            border-radius: 10px;
+            padding: 18px 14px 20px 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s;
+            position: relative;
+        }
+        .deal-card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+            border-color: #ffa41c;
+        }
+        .deal-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #f3f3f3;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .deal-card h2 {
+            font-size: 19px;
+            margin: 10px 0 8px 0;
+            color: #232f3e;
+            font-weight: 500;
+        }
+        .deal-card p {
+            font-size: 16px;
+            color: #555;
+            margin: 0 0 10px 0;
+        }
+        .deal-card .discount {
+            color: #b12704;
+            font-weight: bold;
+            margin-left: 8px;
+            font-size: 15px;
+        }
+        .deal-card button {
+            background-color: #ffa41c;
+            color: #111;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.2s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+        }
+        .deal-card button:hover {
+            background-color: #ff9900;
+        }
+        footer {
+            background: #232f3e;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 40px;
+            font-size: 15px;
+        }
+        @media (max-width: 700px) {
+            .deal-grid {
+                grid-template-columns: 1fr;
+            }
+            .filters {
+                max-width: 100%;
+            }
+            .main-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .deal-search {
+                width: 100%;
+                margin: 10px 0 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <button class="back-btn" onclick="history.back()">&#8592; Back</button>
+        <div class="logo">🛍️ MiniAmazon</div>
+        <input type="text" placeholder="Search Today's Deals..." class="deal-search" />
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="test_css.html">Home</a> &gt; <span>Today's Deals</span>
+    </nav>
+
+    <main class="deals-section">
+        <div class="filters">
+            <h3>Filter by Category</h3>
+            <label><input type="checkbox" data-category="Electronics"> Electronics</label>
+            <label><input type="checkbox" data-category="Clothing"> Clothing</label>
+            <label><input type="checkbox" data-category="Gadgets"> Gadgets</label>
+            <label><input type="checkbox" data-category="Home & Kitchen"> Home & Kitchen</label>
+        </div>
+
+        <h1>Today's Deals</h1>
+        <div class="deal-grid">
+            <!-- Deal Card -->
+            <div class="deal-card" data-category="Clothing">
+                <img src="pro_image/shoe.jpeg" alt="Running Shoes">
+                <h2>Running Shoes</h2>
+                <p><del>₹9999</del> <strong>₹7499</strong> <span class="discount">25% off</span></p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="deal-card" data-category="Electronics Gadgets">
+                <img src="pro_image/headphone.jpeg" alt="Wireless Headphones">
+                <h2>Wireless Headphones</h2>
+                <p><del>₹8999</del> <strong>₹5999</strong> <span class="discount">33% off</span></p>
+                <button>Add to Cart</button>
+            </div>
+
+            <!-- Add more cards as needed, with appropriate data-category attributes -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MiniAmazon. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Add to Cart alert
+        document.querySelectorAll('.deal-card button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Item added to cart!');
+            });
+        });
+
+        // Checkbox redirect to first matching item
+        document.querySelectorAll('.filters input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    const category = this.getAttribute('data-category');
+                    const card = Array.from(document.querySelectorAll('.deal-card')).find(card =>
+                        card.getAttribute('data-category') && card.getAttribute('data-category').includes(category)
+                    );
+                    if (card) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        card.style.boxShadow = '0 0 0 4px #ffa41c, 0 6px 24px rgba(0,0,0,0.13)';
+                        setTimeout(() => {
+                            card.style.boxShadow = '';
+                        }, 1200);
+                    }
+                    // Uncheck others
+                    document.querySelectorAll('.filters input[type="checkbox"]').forEach(cb => {
+                        if (cb !== this) cb.checked = false;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
